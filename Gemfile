@@ -4,10 +4,10 @@ gem 'rails', '3.0.10'
 #gem 'pg', '~> 0.15.0'
 gem 'mysql2', '~> 0.2.7'
 gem 'sqlite3'
-gem 'spree', '~> 0.60.6'
+gem 'spree'
 gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :ref => 'a185d160047ce54f07bd47f7d417d9e2681fbb07'
-gem 'synergy', '~> 0.60.0'
-gem 'synergy_default_theme', '1.0.2'
+gem 'synergy'
+gem 'synergy_default_theme'
 
 group :production do
     gem 'unicorn'
