@@ -1,4 +1,12 @@
 RedJam::Application.routes.draw do
+  root :to => 'home#index'
+  
+  resources :products
+  match 's/*product_group_query' => 'products#index', :as => :simple_search
+  match '/pg/:product_group_name' => 'products#index', :as => :pg_search
+  match '/t/*id/s/*product_group_query' => 'taxons#show', :as => :taxons_search
+  match 't/*id/pg/:product_group_name' => 'taxons#show', :as => :taxons_pg_search
+  
   resources :addresses, :only => [:edit, :update, :destroy]
 
   namespace :api do
@@ -52,9 +60,7 @@ RedJam::Application.routes.draw do
   end
   resource :account, :controller => "users"
 
-  root :to => 'products#index'
 
-  resources :products
 
   match '/locale/set' => 'locale#set'
 
@@ -96,10 +102,6 @@ RedJam::Application.routes.draw do
     end
   end
 
-  match 's/*product_group_query' => 'products#index', :as => :simple_search
-  match '/pg/:product_group_name' => 'products#index', :as => :pg_search
-  match '/t/*id/s/*product_group_query' => 'taxons#show', :as => :taxons_search
-  match 't/*id/pg/:product_group_name' => 'taxons#show', :as => :taxons_pg_search
 
   match '/t/*id' => 'taxons#show', :as => :nested_taxons
   
@@ -283,10 +285,6 @@ RedJam::Application.routes.draw do
 
 
   match '/static/*path', :to => 'static_content#show', :via => :get, :as => 'static'
-
-  namespace :admin do
-    
-  end
 
   # Add your extension routes here
   match "/admin/products/import_from_yandex_market" => "admin/products#import_from_yandex_market", :as => :import_from_yandex_market

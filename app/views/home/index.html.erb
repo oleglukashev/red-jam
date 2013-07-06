@@ -1,11 +1,89 @@
-<% content_for :sidebar do %>
-  <%= render "shared/taxonomies" %>
-<% end %>
-
-<% @taxons.each do |taxon| %>
-  <div class="taxon">
-    <h2><%= taxon.name %></h2>
-
-    <%= render :partial => "shared/products", :locals => {:products => taxon_preview(taxon, 6), :taxon => taxon} %>
-  </div>
-<% end %>
+<div class="home-tab">
+</div>
+<div class="home-taxons-wrap">
+    <div class="home-taxon">
+        <h2>Хиты продаж</h2>
+        <p class="home-taxon-all"><a href="/">Все хиты продаж</a></p>
+        <div class="clear"></div>
+        <div>
+            <div class="home-taxon-item">
+                <div class="home-taxon-item-image">
+                    <a href="/"><img src="../images/15753_small.jpg" alt="" /></a>
+                </div>
+                <p class="home-taxon-item-title"><a href="/">Плазменный телевизор LG 42PQ100R</a></p>
+                <p class="home-taxon-item-price">1 500 руб.</p>
+                <p class="home-taxon-item-buy"><a href="/">Добавить</a> <a href="/">Подробнее</a></p>
+            </div>
+            <div class="home-taxon-item">
+                <div class="home-taxon-item-image">
+                    <a href="/"><img src="../images/15753_small.jpg" alt="" /></a>
+                </div>
+                <p class="home-taxon-item-title"><a href="/">Плазменный телевизор LG 42PQ100R</a></p>
+                <p class="home-taxon-item-price">1 500 руб.</p>
+                <p class="home-taxon-item-buy"><a href="/">Добавить</a> <a href="/">Подробнее</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="home-taxon">
+        <h2>Спецпредложения</h2>
+        <p class="home-taxon-all"><a href="/">Все хиты продаж</a></p>
+        <div class="clear"></div>
+        <div>
+            <div class="home-taxon-item">
+                <div class="home-taxon-item-image">
+                    <a href="/"><img src="../images/15753_small.jpg" alt="" /></a>
+                </div>
+                <p class="home-taxon-item-title"><a href="/">Плазменный телевизор LG 42PQ100R</a></p>
+                <p class="home-taxon-item-price">1 500 руб.</p>
+                <p class="home-taxon-item-buy"><a href="/">Добавить</a> <a href="/">Подробнее</a></p>
+            </div>
+            <div class="home-taxon-item">
+                <div class="home-taxon-item-image">
+                    <a href="/"><img src="../images/15753_small.jpg" alt="" /></a>
+                </div>
+                <p class="home-taxon-item-title"><a href="/">Плазменный телевизор LG 42PQ100R</a></p>
+                <p class="home-taxon-item-price">1 500 руб.</p>
+                <p class="home-taxon-item-buy"><a href="/">Добавить</a> <a href="/">Подробнее</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="home-taxon">
+        <h2>Скидки</h2>
+        <p class="home-taxon-all"><a href="/">Все хиты продаж</a></p>
+        <div class="clear"></div>
+        <div>
+            <div class="home-taxon-item">
+                <div class="home-taxon-item-image">
+                    <a href="/"><img src="../images/15753_small.jpg" alt="" /></a>
+                </div>
+                <p class="home-taxon-item-title"><a href="/">Плазменный телевизор LG 42PQ100R</a></p>
+                <p class="home-taxon-item-price">1 500 руб.</p>
+                <p class="home-taxon-item-buy"><a href="/">Добавить</a> <a href="/">Подробнее</a></p>
+            </div>
+            <div class="home-taxon-item">
+                <div class="home-taxon-item-image">
+                    <a href="/"><img src="../images/15753_small.jpg" alt="" /></a>
+                </div>
+                <p class="home-taxon-item-title"><a href="/">Плазменный телевизор LG 42PQ100R</a></p>
+                <p class="home-taxon-item-price">1 500 руб.</p>
+                <p class="home-taxon-item-buy"><a href="/">Добавить</a> <a href="/">Подробнее</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-additional">
+    <div class="home-news">
+        <h2>Новости</h2>
+        <div class="home-news-item">
+            <p class="home-news-title"><a href="/">Меган Фокс в апрельском номере журнала Jalouse</a></p>
+            <p class="home-news-date">15 мая 2013</p>
+            <p class="home-news-title"><a href="/">Меган Фокс в апрельском номере журнала Jalouse</a></p>
+            <p class="home-news-date">15 мая 2013</p>
+            <p class="home-news-title"><a href="/">Меган Фокс в апрельском номере журнала Jalouse</a></p>
+            <p class="home-news-date">15 мая 2013</p>
+        </div>
+    </div>
+    <div class="home-check-status">
+        <h2>Проверка статуса заказа</h2>
+    </div>
+</div>

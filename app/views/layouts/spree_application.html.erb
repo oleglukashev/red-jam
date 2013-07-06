@@ -1,110 +1,332 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <%= render 'shared/head' %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index, follow">
+<link type="text/css" rel="stylesheet" href="stylesheets/reset.css" />
+<link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
+<script src="javascripts/jquery.1.10.2.js"></script>
+<script type="text/javascript" src="javascripts/jquery.bxslider.min.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/jquery.bxslider.css" />
+<title>red-jam - интернет магазин для взрослых</title>
 </head>
-<%
-   if @body_class.nil?
-     if content_for?(:sidebar)
-       @body_class = 'two-col'
-     else
-       @body_class = 'one-col'
-     end
-   end
-%>
-
-<body class="<%= @body_class %>" id="<%= @body_id %>">
-
-<div class="wrapper">
-  <div class="main_top" align="center">
-    <div class="header_panel">
-      <ul>
-        <li class="header_panel_logo">
-          <div><%= link_to image_tag("logo.png", :alt => "Synergy logo"), root_url %></div></li>
-        <li class="header_panel_search"><%= render 'shared/search' %></li>
-        <li class="header_panel_cart">
-          <div><%= link_to_cart %></div>
-        </li>
-        <% if defined?(SpreeCompareProducts) %>
-        <li class="header_panel_compare_product">
-            <div><%= link_to(t(:product_comparison, :scope => :compare_products) + (@comparable_products.size > 0 ? " (#{@comparable_products.count})" : ""),
-                             compare_products_path, :id => "compare_products") %></div>
-            <div id="tooltip" class="tooltip" style="display: none">
-              <div class="tooltip_top"></div>
-              <div class="tooltip_middle">
-                <div style="font-size: 0px">&nbsp;</div>
-                <div class="tooltip_content" id="tooltip_content"></div>
-                <div style="font-size: 0px">&nbsp;</div>
-              </div>
-              <div class="tooltip_bottom"></div>
+<body>
+	<div id="container">
+		<div class="top-navigation">
+			<div class="top-navigation-content">
+				<div class="auth-wrap">
+					<p><a href="/">Авторизироваться</a>&nbsp;или&nbsp;<a href="/">Зарегистрироваться</a></p>
+				</div>
+				<div class="top-menu-wrap">
+					<p><a href="/">Главная</a><a href="/">Главная</a><a href="/">Главная</a><a href="/">Главная</a><a href="/">Главная</a><a href="/">Главная</a></p>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="logo"><a href="/"><img src="images/logo.png" src="" /></a></div>
+			<div class="search-wrap">
+				<div class="phone">+7 (123) 123 12 12</div>
+				<div class="worktime">
+					<div class="worktime-line">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div class="weekend"></div>
+						<div class="weekend"></div>
+					</div>
+					<p>по будням c<br /> 9:00 до 20:00</p>
+				</div>
+				<div class="search">
+					<input type="text" id="search-input" />
+				</div>
+			</div>
+			<div class="basket">
+				<p><span>В корзине</span> <b>0</b> товаров</p>
+				<p>на сумму <b>0</b> рублей</p>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="main-menu">
+			<div class="main-menu-navigator">
+				<ul>
+                    <li><a href="/">Must Have</a></li>
+					<li><a href="/">Стимуляторы</a></li>
+					<li><a href="/">Секс-игрушки</a></li>
+					<li><a href="/">Наборы для пар</a></li>
+					<li><a href="/">Аксессуары и БДСМ</a></li>
+					<li><a href="/">Нижнее белье</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="main">
+			<div class="main-specoffers">
+				<ul id="mycarousel" class="bxslider">
+                    <li>
+                        <div class="mycarousel-item">
+                            <div class="mycarousel-item-text">
+                                <div class="mycarousel-item-title">Apple iPad 2 64Gb Wi-Fi + 1</div>
+                                <div class="mycarousel-item-description">Два мощных ядра в одном процессоре A5 позволяют iPad выполнять в два раза больше работы за то же время. Вы, несомненно, заметите разницу, когда будете выходить в Интернет, смотреть фильмы, делать видеозвонки FaceTime, играть и переключаться между приложениями. Функция многозадачности работает плавнее, приложения загружаются быстрее — всё работает ещё лучше.</div>
+                                <div class="mycarousel-item-price">Цена: <span>5 000</span> руб.</div>
+                            </div>
+                            <div class="mycarousel-item-photos">
+                                <div class="mycarousel-item-photo"><img style="width: 500px; height: 250px;" src="images/1.jpg" alt="" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mycarousel-item">
+                            <div class="mycarousel-item-text">
+                                <div class="mycarousel-item-title">Apple iPad 2 64Gb Wi-Fi + 1</div>
+                                <div class="mycarousel-item-description">Два мощных ядра в одном процессоре A5 позволяют iPad выполнять в два раза больше работы за то же время. Вы, несомненно, заметите разницу, когда будете выходить в Интернет, смотреть фильмы, делать видеозвонки FaceTime, играть и переключаться между приложениями. Функция многозадачности работает плавнее, приложения загружаются быстрее — всё работает ещё лучше.</div>
+                                <div class="mycarousel-item-price">Цена: <span>5 000</span> руб.</div>
+                            </div>
+                            <div class="mycarousel-item-photos">
+                                <div class="mycarousel-item-photo"><img style="width: 500px; height: 250px;" src="images/1.jpg" alt="" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mycarousel-item">
+                            <div class="mycarousel-item-text">
+                                <div class="mycarousel-item-title">Apple iPad 2 64Gb Wi-Fi + 1</div>
+                                <div class="mycarousel-item-description">Два мощных ядра в одном процессоре A5 позволяют iPad выполнять в два раза больше работы за то же время. Вы, несомненно, заметите разницу, когда будете выходить в Интернет, смотреть фильмы, делать видеозвонки FaceTime, играть и переключаться между приложениями. Функция многозадачности работает плавнее, приложения загружаются быстрее — всё работает ещё лучше.</div>
+                                <div class="mycarousel-item-price">Цена: <span>5 000</span> руб.</div>
+                            </div>
+                            <div class="mycarousel-item-photos">
+                                <div class="mycarousel-item-photo"><img style="width: 500px; height: 250px;" src="images/1.jpg" alt="" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mycarousel-item">
+                            <div class="mycarousel-item-text">
+                                <div class="mycarousel-item-title">Apple iPad 2 64Gb Wi-Fi + 1</div>
+                                <div class="mycarousel-item-description">Два мощных ядра в одном процессоре A5 позволяют iPad выполнять в два раза больше работы за то же время. Вы, несомненно, заметите разницу, когда будете выходить в Интернет, смотреть фильмы, делать видеозвонки FaceTime, играть и переключаться между приложениями. Функция многозадачности работает плавнее, приложения загружаются быстрее — всё работает ещё лучше.</div>
+                                <div class="mycarousel-item-price">Цена: <span>5 000</span> руб.</div>
+                            </div>
+                            <div class="mycarousel-item-photos">
+                                <div class="mycarousel-item-photo"><img style="width: 500px; height: 250px;" src="images/1.jpg" alt="" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="mycarousel-item">
+                            <div class="mycarousel-item-text">
+                                <div class="mycarousel-item-title">Apple iPad 2 64Gb Wi-Fi + 1</div>
+                                <div class="mycarousel-item-description">Два мощных ядра в одном процессоре A5 позволяют iPad выполнять в два раза больше работы за то же время. Вы, несомненно, заметите разницу, когда будете выходить в Интернет, смотреть фильмы, делать видеозвонки FaceTime, играть и переключаться между приложениями. Функция многозадачности работает плавнее, приложения загружаются быстрее — всё работает ещё лучше.</div>
+                                <div class="mycarousel-item-price">Цена: <span>5 000</span> руб.</div>
+                            </div>
+                            <div class="mycarousel-item-photos">
+                                <div class="mycarousel-item-photo"><img style="width: 500px; height: 250px;" src="images/1.jpg" alt="" /></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+			</div>
+			<div class="types-offers">
+				<div class="types-offers-trigger">
+				</div>
+                <div class="types-offer-list">
+                    <div class="type-offer-new">
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                        <div class="type-offer-item">
+                            <div class="type-offer-item-photo"><a href="/"><img src="images/1.jpg" alt="" /></a></div>
+                            <div class="type-offer-item-category"><a href="/">Категория</a></div>
+                            <div class="type-offer-item-title"><a href="/">Sony Tablet S</a></div>
+                            <div class="type-offer-item-price">15 000 руб.</div>
+                            <div class="type-offer-basket">В карзину</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-  <div align="center">
-    <div class="fixed_width">
-      <div id="top_panel">
-        <div id="top_login_bar">
-          <%= hook :shared_login_bar %>
-        </div>
-        <div id="header_menu">
-          <ul class="header_menu">
-            <% for page in Page.header_links do %>
-              <li><%= link_to page.title, page.link %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-      <%= render :partial => 'shared/comparable_products' if defined?(SpreeCompareProducts) %>
-      <% if content_for?(:sidebar) %>
-        <div class="sidebar">
-          <%= hook :sidebar do %>
-            <%= yield :sidebar %>
-          <% end %>
-
-          <% if Page.sidebar_links.any? %>
-          <div id="sidebar_menu">
-            <ul class="sidebar_menu">
-              <% for page in Page.sidebar_links do %>
-                <li><%= link_to page.title, page.link %></li>
-              <% end %>
-            </ul>
-          </div>
-          <% end %>
-        </div>
-      <% end %>
-      <div id="content" class="content">
-        <%= flash_messages %>
-        <noscript>
-          <% if flash[:notice] %>
-            <div class="flash notice"><%= flash[:notice] %></div>
-          <% end %>
-          <% if flash[:error] %>
-            <div class="flash errors"><%= flash[:error] %></div>
-          <% end %>
-        </noscript>
-        <%= yield %>
-      </div>
-      <div style="height: 10px;"></div>
-    </div>
-  </div>
-  <div class="footer_fake"></div>
-</div>
-
-<div class="footer" align="center">
-<% cache 'footer_menu' do %>
-  <ul class="footer_menu">
-    <% for page in Page.footer_links do %>
-      <li><%= link_to page.title, page.link %></li>
-    <% end %>
-  </ul>
-<% end %>
-</div>
-<%= hook :footer_right %>
-<% cache 'google_analytics' do %>
-  <%= render 'shared/google_analytics' %>
-<% end %>
+		</div>
+        <div class="footer">
+            <div class="footer-top">
+            </div>
+            <div class="footer-body">
+                <div class="footer-cop">
+                    <p><span>2013 © Red Jam</span></p>
+                    <p>Интернет-магазин цифровой и бытовой техники</p>
+                </div>
+                <div class="footer-phone">
+                    <div class="phone">+7 (123) 123 12 12</div>
+                    <div class="worktime">
+                        <div class="worktime-line">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div class="weekend"></div>
+                            <div class="weekend"></div>
+                        </div>
+                        <p>по будням c<br> 9:00 до 20:00</p>
+                    </div>
+                </div>
+                <div class="footer-menu">
+                    <div class="footer-menu-category">
+                        <div class="footer-menu-category-block">
+                            <p class="footer-menu-category-title">Must Have</p>
+                            <p><a href="/">Презервативы</a></p>
+                            <p><a href="/">Смазка</a></p>
+                        </div>
+                        <div class="footer-menu-category-block">
+                            <p class="footer-menu-category-title">Стимуляторы</p>
+                            <p><a href="/">Вибраторы</a></p>
+                            <p><a href="/">Стимуляторы точки G</a></p>
+                        </div>
+                    </div>
+                    <div class="footer-menu-category">
+                        <div class="footer-menu-category-block">
+                            <p class="footer-menu-category-title">Секс-игрушки</p>
+                            <p><a href="/">Страпоны</a></p>
+                            <p><a href="/">Фаллоимитаторы</a></p>
+                            <p><a href="/">Анальный секс</a></p>
+                            <p><a href="/">Шарики и нитки для киски</a></p>
+                        </div>
+                        <div class="footer-menu-category-block">
+                            <p class="footer-menu-category-title">Наборы для пар</p>
+                        </div>
+                    </div>
+                     <div class="footer-menu-category">
+                        <div class="footer-menu-category-block">
+                            <p class="footer-menu-category-title">Аксессуары и БДСМ</p>
+                        </div>
+                        <div class="footer-menu-category-block">
+                            <p class="footer-menu-category-title">Нижнее белье</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+        $(document).ready(function(){
+            $('.bxslider').bxSlider();
+        });
+    </script>
 </body>
 </html>
